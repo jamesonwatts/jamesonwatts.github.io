@@ -4,15 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+I teach, consult, and do research at the intersection of marketing and computer science with an emphasis on machine learning, computational linguistics and social networks. I have over 20 years of programming experience, which I employ in the service of research and the application of common data science tools to real-world business problems. My work has been published in the Journal of Interactive Marketing, Network Science, the International Journal of Market Research, Marketing Theory, and a book on digital marketing. My current research is focused on the application of machine learning techniques to problems of semantic similarity, the language of sales, and innovation.
