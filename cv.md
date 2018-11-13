@@ -4,26 +4,26 @@ title: Curriculum Vitae
 permalink: /cv/
 ---
 
-Jameson K. M. Watts, Ph.D., MBA\
-P: 971.254.7441\
-E: [jwatts@willamette.edu](mailto:jwatts@willamette.edu)\
+Jameson K. M. Watts, Ph.D., MBA<br/>
+P: 971.254.7441<br/>
+E: [jwatts@willamette.edu](mailto:jwatts@willamette.edu)<br/>
 T: [\@jamesonwatts](https://twitter.com/jamesonwatts)
 
 ### Employment
 
-Atkinson Graduate School of Management, Willamette University, Salem, OR\
+Atkinson Graduate School of Management, Willamette University, Salem, OR<br/>
 Assistant Professor (2015-present)
 
 ### Education
 
 Eller School of Management, University of Arizona, Tucson, AZ
-Ph.D. Marketing (2015)\
+Ph.D. Marketing (2015)<br/>
 Minor in Computational Linguistics
 
-Atkinson Graduate School of Management, Willamette University, Salem, OR\
+Atkinson Graduate School of Management, Willamette University, Salem, OR<br/>
 MBA Marketing and Strategy (2007)
 
-University of Colorado, Boulder, CO\
+University of Colorado, Boulder, CO<br/>
 BSc. Computer Science (2002)
 
 ### Research Interests
