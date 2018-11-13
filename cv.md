@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Curriculum Vitae
+title: CV
 permalink: /cv/
 ---
 
-##Employment
+#Employment
 
-##Education
+#Education
 
-##Research Interests
+#Research Interests
 
