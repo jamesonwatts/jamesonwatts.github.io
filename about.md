@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-<img style="float: right;" src="headshot.jpg">
+<img style="float: right;" src="/headshot.jpg">
 
 I am an assistant professor in the [Atkinson Graduate School of Management](http://www.willamette.edu/mba) at Willamette University.
 
