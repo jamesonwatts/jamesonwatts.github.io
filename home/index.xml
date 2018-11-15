@@ -33,11 +33,10 @@
     <item>
       <title></title>
       <link>/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 15 Oct 2018 00:00:00 -0700</pubDate>
       
       <guid>/home/about/</guid>
-      <description>Biography Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.</description>
+      <description>Biography I teach, consult, and do research at the intersection of marketing and computer science with an emphasis on machine learning, computational linguistics and social networks. I have over 20 years of programming experience, which I employ in the service of research and the application of common data science tools to real-world business problems. My work has been published in the Journal of Interactive Marketing, Network Science, the International Journal of Market Research, Marketing Theory, and a book on digital marketing.</description>
     </item>
     
     <item>
@@ -118,9 +117,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristiq
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0700</pubDate>
       
       <guid>/home/teaching/</guid>
-      <description>This is an example of using the custom widget to create your own homepage section.
-I am a teaching instructor for the following courses at University X:
- CS101: An intro to computer science CS102: An intro to computer science CS103: An intro to computer science CS104: An intro to computer science CS105: An intro to computer science CS106: An intro to computer science CS107: An intro to computer science  </description>
+      <description>I currently teach the following courses at Willamette University:
+ GSM 6261: Marketing Strategy GSMPR 625: Creating and Implementing Market-driven Strategies GSM 5107: Marketing &amp;mdash; Creating Satisfied Customers GSM 6004: Digital Marketing and E-commerce GSM 6007: Social Media Marketing  </description>
     </item>
     
     <item>
