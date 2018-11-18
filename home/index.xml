@@ -7,28 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 15 Oct 2018 00:00:00 -0700</lastBuildDate>
     
 	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title></title>
-      <link>/home/hero_carousel/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 -0700</pubDate>
-      
-      <guid>/home/hero_carousel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Academic</title>
-      <link>/home/hero/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 -0700</pubDate>
-      
-      <guid>/home/hero/</guid>
-      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release   Star</description>
-    </item>
     
     <item>
       <title></title>
@@ -40,30 +22,20 @@
     </item>
     
     <item>
-      <title>Skills</title>
-      <link>/home/skills/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 -0700</pubDate>
+      <title></title>
+      <link>/home/hero_carousel/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 -0700</pubDate>
       
-      <guid>/home/skills/</guid>
+      <guid>/home/hero_carousel/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Teaching</title>
-      <link>/home/teaching/</link>
+      <title>Recent Publications</title>
+      <link>/home/publications/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0700</pubDate>
       
-      <guid>/home/teaching/</guid>
-      <description>I currently teach the following courses at Willamette University:
- GSM 6261: Marketing Strategy GSMPR 625: Creating and Implementing Market-driven Strategies GSM 5107: Marketing &amp;mdash; Creating Satisfied Customers GSM 6004: Digital Marketing and E-commerce GSM 6007: Social Media Marketing  </description>
-    </item>
-    
-    <item>
-      <title>Experience</title>
-      <link>/home/experience/</link>
-      <pubDate>Mon, 15 Oct 2018 00:00:00 -0700</pubDate>
-      
-      <guid>/home/experience/</guid>
+      <guid>/home/publications/</guid>
       <description></description>
     </item>
     
@@ -77,11 +49,39 @@
     </item>
     
     <item>
-      <title>Recent Publications</title>
-      <link>/home/publications/</link>
+      <title>Academic</title>
+      <link>/home/hero/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 -0700</pubDate>
+      
+      <guid>/home/hero/</guid>
+      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release   Star</description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>/home/teaching/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0700</pubDate>
       
-      <guid>/home/publications/</guid>
+      <guid>/home/teaching/</guid>
+      <description>I currently teach the following courses at Willamette University:
+ GSM 5107: Marketing &amp;mdash; Creating Satisfied Customers GSMPR 625: Creating and Implementing Market-driven Strategies GSM 6004: Digital Marketing and E-commerce GSM 6007: Social Media Marketing GSM 6261: Marketing Strategy  </description>
+    </item>
+    
+    <item>
+      <title>Skills</title>
+      <link>/home/skills/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 -0700</pubDate>
+      
+      <guid>/home/skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experience</title>
+      <link>/home/experience/</link>
+      <pubDate>Mon, 15 Oct 2018 00:00:00 -0700</pubDate>
+      
+      <guid>/home/experience/</guid>
       <description></description>
     </item>
     

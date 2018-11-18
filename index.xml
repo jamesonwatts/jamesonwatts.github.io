@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 15 Oct 2018 00:00:00 -0700</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -62,6 +62,15 @@
 
 &lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>When online visibility deters social interaction: The case of digital gifts</title>
+      <link>/publication/online-visibility/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
+      
+      <guid>/publication/online-visibility/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -464,16 +473,6 @@ git submodule update --init --recursive
     </item>
     
     <item>
-      <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/publication/person-re-id/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 -0700</pubDate>
-      
-      <guid>/publication/person-re-id/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Hello R Markdown</title>
       <link>/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
@@ -525,13 +524,12 @@ Figure 1: A fancy pie chart.
     </item>
     
     <item>
-      <title>Mobile visual clothing search</title>
-      <link>/publication/clothing-search/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 -0700</pubDate>
+      <title>Supple Networks: Preferential Attachment by diversity in nascent social graphs</title>
+      <link>/publication/supple-networks/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 -0800</pubDate>
       
-      <guid>/publication/clothing-search/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/publication/supple-networks/</guid>
+      <description></description>
     </item>
     
     <item>

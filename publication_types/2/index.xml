@@ -7,18 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 01 Sep 2015 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 01 Dec 2016 00:00:00 -0800</lastBuildDate>
     
 	<atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/publication/person-re-id/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 -0700</pubDate>
+      <title>When online visibility deters social interaction: The case of digital gifts</title>
+      <link>/publication/online-visibility/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
       
-      <guid>/publication/person-re-id/</guid>
-      <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
+      <guid>/publication/online-visibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Supple Networks: Preferential Attachment by diversity in nascent social graphs</title>
+      <link>/publication/supple-networks/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 -0800</pubDate>
+      
+      <guid>/publication/supple-networks/</guid>
+      <description></description>
     </item>
     
   </channel>
