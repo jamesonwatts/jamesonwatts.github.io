@@ -29,7 +29,7 @@
     <url>
     
       <loc>/publication/redefining-market/</loc>
-      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <lastmod>2018-05-20T00:00:00-07:00</lastmod>
     </url>
     
   
@@ -37,6 +37,14 @@
     <url>
     
       <loc>/publication/trend-spotting/</loc>
+      <lastmod>2018-02-27T00:00:00-08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/connected-consumers/</loc>
       <lastmod>2018-01-01T00:00:00-08:00</lastmod>
     </url>
     
@@ -77,7 +85,7 @@
     <url>
     
       <loc>/publication/online-visibility/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <lastmod>2016-11-01T00:00:00-07:00</lastmod>
     </url>
     
   
@@ -108,6 +116,22 @@
     
     <url>
     
+      <loc>/publication/strangers-you-may-know/</loc>
+      <lastmod>2016-03-15T00:00:00-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/social-visibility/</loc>
+      <lastmod>2015-11-03T00:00:00-08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/post/2015-07-23-r-rmarkdown/</loc>
       <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     </url>
@@ -124,7 +148,25 @@
     
     <url>
     
+      <loc>/publication_types/1/</loc>
+      <lastmod>2016-03-15T00:00:00-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/publication_types/2/</loc>
+      <lastmod>2018-05-20T00:00:00-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication_types/6/</loc>
       <lastmod>2018-01-01T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -187,7 +229,7 @@
     <url>
     
       <loc>/publication_types/</loc>
-      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <lastmod>2016-03-15T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -237,8 +279,17 @@
     
     <url>
     
+      <loc>/tags/algorithms/</loc>
+      <lastmod>2016-03-15T00:00:00-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/big-data/</loc>
-      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <lastmod>2018-02-27T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -255,8 +306,17 @@
     
     <url>
     
+      <loc>/tags/content-marketing/</loc>
+      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/digital-gifts/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <lastmod>2016-11-01T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -274,6 +334,15 @@
     <url>
     
       <loc>/tags/exchange-theory/</loc>
+      <lastmod>2018-05-20T00:00:00-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/ideological-capital/</loc>
       <lastmod>2018-01-01T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -283,7 +352,7 @@
     <url>
     
       <loc>/tags/information-theory/</loc>
-      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <lastmod>2018-02-27T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -292,7 +361,16 @@
     <url>
     
       <loc>/tags/institutional-theory/</loc>
-      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <lastmod>2018-05-20T00:00:00-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/intimacy/</loc>
+      <lastmod>2016-03-15T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -301,7 +379,7 @@
     <url>
     
       <loc>/tags/market-system-dynamics/</loc>
-      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <lastmod>2018-05-20T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -310,7 +388,7 @@
     <url>
     
       <loc>/tags/markets/</loc>
-      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <lastmod>2018-05-20T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -319,6 +397,15 @@
     <url>
     
       <loc>/tags/natural-language-processing/</loc>
+      <lastmod>2018-02-27T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/network-analysis/</loc>
       <lastmod>2018-01-01T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -328,7 +415,7 @@
     <url>
     
       <loc>/tags/network-structure/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <lastmod>2016-11-01T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -337,7 +424,7 @@
     <url>
     
       <loc>/tags/online-visibility/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <lastmod>2016-11-01T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -346,7 +433,7 @@
     <url>
     
       <loc>/tags/platform-strategy/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <lastmod>2016-11-01T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -373,7 +460,7 @@
     <url>
     
       <loc>/tags/privacy/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <lastmod>2016-11-01T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -400,7 +487,7 @@
     <url>
     
       <loc>/tags/shared-understanding/</loc>
-      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <lastmod>2018-05-20T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -409,7 +496,7 @@
     <url>
     
       <loc>/tags/social-media/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <lastmod>2016-11-01T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -418,7 +505,16 @@
     <url>
     
       <loc>/tags/social-networks/</loc>
-      <lastmod>2014-12-01T00:00:00-08:00</lastmod>
+      <lastmod>2015-11-03T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/social-risk/</loc>
+      <lastmod>2015-11-03T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -427,7 +523,7 @@
     <url>
     
       <loc>/tags/sociocognitive-structures/</loc>
-      <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <lastmod>2018-02-27T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
     

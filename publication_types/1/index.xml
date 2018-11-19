@@ -7,18 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 01 Jul 2013 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 15 Mar 2016 00:00:00 -0700</lastBuildDate>
     
 	<atom:link href="/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Mobile visual clothing search</title>
-      <link>/publication/clothing-search/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 -0700</pubDate>
+      <title>Strangers you may know: social surveillance and intimacy online</title>
+      <link>/publication/strangers-you-may-know/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 -0700</pubDate>
       
-      <guid>/publication/clothing-search/</guid>
-      <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
+      <guid>/publication/strangers-you-may-know/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Social Visibility and the Gifting of Digital Goods</title>
+      <link>/publication/social-visibility/</link>
+      <pubDate>Tue, 03 Nov 2015 00:00:00 -0800</pubDate>
+      
+      <guid>/publication/social-visibility/</guid>
+      <description></description>
     </item>
     
   </channel>
