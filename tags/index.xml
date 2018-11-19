@@ -40,51 +40,6 @@
     </item>
     
     <item>
-      <title>Digital gifts</title>
-      <link>/tags/digital-gifts/</link>
-      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
-      
-      <guid>/tags/digital-gifts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network structure</title>
-      <link>/tags/network-structure/</link>
-      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
-      
-      <guid>/tags/network-structure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Online visibility</title>
-      <link>/tags/online-visibility/</link>
-      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
-      
-      <guid>/tags/online-visibility/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Platform strategy</title>
-      <link>/tags/platform-strategy/</link>
-      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
-      
-      <guid>/tags/platform-strategy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Privacy</title>
-      <link>/tags/privacy/</link>
-      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
-      
-      <guid>/tags/privacy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>R Markdown</title>
       <link>/tags/r-markdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
@@ -94,20 +49,38 @@
     </item>
     
     <item>
-      <title>Social media</title>
-      <link>/tags/social-media/</link>
-      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
-      
-      <guid>/tags/social-media/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>big data</title>
       <link>/tags/big-data/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 -0800</pubDate>
       
       <guid>/tags/big-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>complex networks</title>
+      <link>/tags/complex-networks/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/complex-networks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>digital gifts</title>
+      <link>/tags/digital-gifts/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/digital-gifts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diversity</title>
+      <link>/tags/diversity/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/diversity/</guid>
       <description></description>
     </item>
     
@@ -166,11 +139,56 @@
     </item>
     
     <item>
+      <title>network structure</title>
+      <link>/tags/network-structure/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/network-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>online visibility</title>
+      <link>/tags/online-visibility/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/online-visibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>platform strategy</title>
+      <link>/tags/platform-strategy/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/platform-strategy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>plot</title>
       <link>/tags/plot/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/tags/plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>preferential attachment</title>
+      <link>/tags/preferential-attachment/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/preferential-attachment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>privacy</title>
+      <link>/tags/privacy/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/privacy/</guid>
       <description></description>
     </item>
     
@@ -184,11 +202,38 @@
     </item>
     
     <item>
+      <title>resilience</title>
+      <link>/tags/resilience/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/resilience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>shared understanding</title>
       <link>/tags/shared-understanding/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 -0800</pubDate>
       
       <guid>/tags/shared-understanding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>social media</title>
+      <link>/tags/social-media/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/social-media/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>social networks</title>
+      <link>/tags/social-networks/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 -0800</pubDate>
+      
+      <guid>/tags/social-networks/</guid>
       <description></description>
     </item>
     

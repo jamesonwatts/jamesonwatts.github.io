@@ -168,53 +168,8 @@
     
     <url>
     
-      <loc>/tags/digital-gifts/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/</loc>
       <lastmod>2018-10-15T00:00:00-07:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/network-structure/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/online-visibility/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/platform-strategy/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/privacy/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -273,15 +228,6 @@
     
     <url>
     
-      <loc>/tags/social-media/</loc>
-      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/</loc>
       <lastmod>2018-01-13T00:00:00-08:00</lastmod>
       <priority>0</priority>
@@ -293,6 +239,33 @@
     
       <loc>/tags/big-data/</loc>
       <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/complex-networks/</loc>
+      <lastmod>2014-12-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/digital-gifts/</loc>
+      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/diversity/</loc>
+      <lastmod>2014-12-01T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -354,8 +327,53 @@
     
     <url>
     
+      <loc>/tags/network-structure/</loc>
+      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/online-visibility/</loc>
+      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/platform-strategy/</loc>
+      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/plot/</loc>
       <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/preferential-attachment/</loc>
+      <lastmod>2014-12-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/privacy/</loc>
+      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -372,8 +390,35 @@
     
     <url>
     
+      <loc>/tags/resilience/</loc>
+      <lastmod>2014-12-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/shared-understanding/</loc>
       <lastmod>2018-01-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/social-media/</loc>
+      <lastmod>2016-12-01T00:00:00-08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/social-networks/</loc>
+      <lastmod>2014-12-01T00:00:00-08:00</lastmod>
       <priority>0</priority>
     </url>
     
