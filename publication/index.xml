@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Jameson K. M. Watts</title>
+    <title>Publications on Jameson Watts</title>
     <link>/publication/</link>
-    <description>Recent content in Publications on Jameson K. M. Watts</description>
+    <description>Recent content in Publications on Jameson Watts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0800</lastBuildDate>
     
 	<atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
     
@@ -24,7 +24,7 @@
     <item>
       <title>Trend Spotting: Using Text Analysis to Model Market Dynamics</title>
       <link>/publication/trend-spotting/</link>
-      <pubDate>Tue, 27 Feb 2018 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 27 Feb 2018 00:00:00 -0800</pubDate>
       
       <guid>/publication/trend-spotting/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Connected Consumers</title>
       <link>/publication/connected-consumers/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 -0800</pubDate>
       
       <guid>/publication/connected-consumers/</guid>
       <description></description>
@@ -60,7 +60,7 @@
     <item>
       <title>Social Visibility and the Gifting of Digital Goods</title>
       <link>/publication/social-visibility/</link>
-      <pubDate>Tue, 03 Nov 2015 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 03 Nov 2015 00:00:00 -0800</pubDate>
       
       <guid>/publication/social-visibility/</guid>
       <description></description>
@@ -69,7 +69,7 @@
     <item>
       <title>Supple Networks: Preferential Attachment by diversity in nascent social graphs</title>
       <link>/publication/supple-networks/</link>
-      <pubDate>Mon, 01 Dec 2014 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 -0800</pubDate>
       
       <guid>/publication/supple-networks/</guid>
       <description></description>
