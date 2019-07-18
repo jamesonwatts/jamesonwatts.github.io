@@ -67,6 +67,15 @@
     </item>
     
     <item>
+      <title>datascience</title>
+      <link>/tags/datascience/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/datascience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>digital gifts</title>
       <link>/tags/digital-gifts/</link>
       <pubDate>Tue, 01 Nov 2016 00:00:00 -0700</pubDate>
@@ -130,11 +139,29 @@
     </item>
     
     <item>
+      <title>k-means</title>
+      <link>/tags/k-means/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/k-means/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>market system dynamics</title>
       <link>/tags/market-system-dynamics/</link>
       <pubDate>Sun, 20 May 2018 00:00:00 -0700</pubDate>
       
       <guid>/tags/market-system-dynamics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>marketing</title>
+      <link>/tags/marketing/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/marketing/</guid>
       <description></description>
     </item>
     
@@ -216,6 +243,15 @@
       <pubDate>Mon, 01 Dec 2014 00:00:00 -0800</pubDate>
       
       <guid>/tags/resilience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>segmentation</title>
+      <link>/tags/segmentation/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/segmentation/</guid>
       <description></description>
     </item>
     
