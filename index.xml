@@ -20,295 +20,6 @@
     </item>
     
     <item>
-      <title>A New Database for Context-Sensitive Semantic Relatedness</title>
-      <link>/post/a-new-database-for-context-sensitive-semantic-relatedness/</link>
-      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/a-new-database-for-context-sensitive-semantic-relatedness/</guid>
-      <description>
-
-
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
-use_python(&amp;quot;/Applications/anaconda/bin/python&amp;quot;, required = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;omg-python-in-rstudio&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;OMG Python in RStudio!&lt;/h1&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;for i in range(10):
-  if(i&amp;lt;5):
-    print(&amp;quot;Hello Little World  &amp;quot;+str(i))
-  else:
-    print(&amp;quot;Hello Big World  &amp;quot;+str(i))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Hello Little World  0
-## Hello Little World  1
-## Hello Little World  2
-## Hello Little World  3
-## Hello Little World  4
-## Hello Big World  5
-## Hello Big World  6
-## Hello Big World  7
-## Hello Big World  8
-## Hello Big World  9&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;okay-moving-on.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Okay, moving on.&lt;/h2&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import pandas as pd
-import chardet
-import numpy as np
-homedir = &amp;quot;/Users/jwatts/Dropbox/Website&amp;quot;
-with open(f&amp;quot;{homedir}/private/master.csv&amp;quot;, &amp;#39;rb&amp;#39;) as f:
-    result = chardet.detect(f.read())  # or readline if the file is large
-dfi = pd.read_csv(f&amp;quot;{homedir}/private/master.csv&amp;quot;, encoding=result[&amp;#39;encoding&amp;#39;])&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## sys:1: DtypeWarning: Columns (22,23) have mixed types. Specify dtype option on import or set low_memory=False.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;#agreement stats
-taskdata = {&amp;quot;ENTERTAINMENT&amp;quot;:{},&amp;quot;TECHNOLOGY&amp;quot;:{},&amp;quot;POLITICS&amp;quot;:{}}
-for index, row in dfi.iterrows():
-    for j in range(50):
-        compare = row[&amp;quot;Input.Pairwise{:02}-P1&amp;quot;.format(j+1)]+&amp;quot;~&amp;quot;+row[&amp;quot;Input.Pairwise{:02}-P2&amp;quot;.format(j+1)]
-        answer = row[&amp;quot;Answer.Pairwise{:02}&amp;quot;.format(j+1)]
-        context = row[&amp;quot;Input.Context&amp;quot;]
-        if compare in taskdata[context]:
-            taskdata[context][compare].append(answer) 
-        else:
-            taskdata[context][compare]=[answer]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;#accumulate scores
-pairs = {}
-totalerrors=0
-for index, row in dfi.iterrows(): 
-    for j in range(50):
-        p1 = row[&amp;quot;Input.Pairwise{:02}-P1&amp;quot;.format(j+1)]
-        p2 = row[&amp;quot;Input.Pairwise{:02}-P2&amp;quot;.format(j+1)]
-        compare = p1+&amp;quot;~&amp;quot;+p2
-        context = row[&amp;quot;Input.Context&amp;quot;]
-        judgements = np.mean(taskdata[context][compare])  
-        
-        if p1 not in pairs.keys():
-            pairs[p1] = {&amp;quot;ENTERTAINMENT&amp;quot;:[],&amp;quot;TECHNOLOGY&amp;quot;:[],&amp;quot;POLITICS&amp;quot;:[],&amp;quot;W_ENTERTAINMENT&amp;quot;:[],&amp;quot;W_TECHNOLOGY&amp;quot;:[],&amp;quot;W_POLITICS&amp;quot;:[],&amp;quot;A_ENTERTAINMENT&amp;quot;:[],&amp;quot;A_TECHNOLOGY&amp;quot;:[],&amp;quot;A_POLITICS&amp;quot;:[],&amp;quot;ALL&amp;quot;:[],&amp;quot;AGE&amp;quot;:[],&amp;quot;EDU&amp;quot;:[],&amp;quot;ETH&amp;quot;:[],&amp;quot;GEN&amp;quot;:[],&amp;quot;US&amp;quot;:[]}
-        
-        answer = row[&amp;quot;Answer.Pairwise{:02}&amp;quot;.format(j+1)]
-        weight = (row[&amp;#39;Answer.Familiarity&amp;#39;]/2)-0.5 #1-&amp;gt;0, 2-&amp;gt;0.5, 3-&amp;gt;1
-        pairs[p1][context].append(1-answer) #0 means focus pair is more related.
-        pairs[p1][f&amp;quot;W_{context}&amp;quot;].append((1-answer)*weight) #0 means focus pair is more related.
-        
-        pairs[p1][f&amp;quot;A_{context}&amp;quot;].append(1 if judgements == 0 or judgements == 1 else 0) #agree if value is either 0 or 2
-        pairs[p1][&amp;#39;ALL&amp;#39;].append(1-answer) #0 means focus pair is more related.
-        pairs[p1][&amp;#39;AGE&amp;#39;].append(row[&amp;#39;Answer.Age&amp;#39;])
-        pairs[p1][&amp;#39;EDU&amp;#39;].append(row[&amp;#39;Answer.Education&amp;#39;])
-        pairs[p1][&amp;#39;ETH&amp;#39;].append(1 if row[&amp;#39;Answer.Ethnicity&amp;#39;]==&amp;#39;White&amp;#39; else 0)
-        pairs[p1][&amp;#39;GEN&amp;#39;].append(1 if row[&amp;#39;Answer.Gender&amp;#39;]==&amp;#39;Male&amp;#39; else 0)
-        pairs[p1][&amp;#39;US&amp;#39;].append(1 if row[&amp;#39;Answer.country&amp;#39;]==&amp;#39;US&amp;#39; else 0)
-                        
-dfi.to_csv(f&amp;quot;{homedir}/master-results.csv&amp;quot;)                
-print(&amp;quot;finished aggregation&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## finished aggregation&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;with open(f&amp;quot;{homedir}/private/data_core.csv&amp;quot;, &amp;#39;rb&amp;#39;) as f:
-    result = chardet.detect(f.read())  # or readline if the file is large
-dfs = pd.read_csv(f&amp;quot;{homedir}/private/data_core.csv&amp;quot;, encoding=result[&amp;#39;encoding&amp;#39;])
-for index, row in dfs.iterrows():
-    mpair = f&amp;quot;{row[&amp;#39;Word1&amp;#39;].upper()} - {row[&amp;#39;Word2&amp;#39;].upper()}&amp;quot;
-    if mpair in pairs:
-        pairs[mpair][&amp;quot;MEN&amp;quot;] = row[&amp;#39;Relatedness&amp;#39;]/50.0
-import numpy as np
-dfo = pd.DataFrame({&amp;quot;PAIR&amp;quot;:[pair for pair in pairs],
-#                    &amp;quot;RATINGS ENTERTAINMENT&amp;quot;:[len(pairs[pair][&amp;#39;ENTERTAINMENT&amp;#39;]) for pair in pairs],
-                    &amp;quot;S-ENT&amp;quot;:[np.mean(pairs[pair][&amp;#39;ENTERTAINMENT&amp;#39;]) for pair in pairs],
-                    &amp;quot;W-ENT&amp;quot;:[np.mean(pairs[pair][&amp;#39;W_ENTERTAINMENT&amp;#39;]) for pair in pairs],
-                    &amp;quot;A-ENT&amp;quot;:[np.mean(pairs[pair][&amp;#39;A_ENTERTAINMENT&amp;#39;]) for pair in pairs],
-#                    &amp;quot;RATINGS TECHNOLOGY&amp;quot;:[len(pairs[pair][&amp;#39;TECHNOLOGY&amp;#39;]) for pair in pairs],
-                    &amp;quot;S-TEC&amp;quot;:[np.mean(pairs[pair][&amp;#39;TECHNOLOGY&amp;#39;]) for pair in pairs],
-                    &amp;quot;W-TEC&amp;quot;:[np.mean(pairs[pair][&amp;#39;W_TECHNOLOGY&amp;#39;]) for pair in pairs],
-                    &amp;quot;A-TEC&amp;quot;:[np.mean(pairs[pair][&amp;#39;A_TECHNOLOGY&amp;#39;]) for pair in pairs],
-#                    &amp;quot;RATINGS POLITICS&amp;quot;:[len(pairs[pair][&amp;#39;POLITICS&amp;#39;]) for pair in pairs],
-                    &amp;quot;S-POL&amp;quot;:[np.mean(pairs[pair][&amp;#39;POLITICS&amp;#39;]) for pair in pairs],
-                    &amp;quot;W-POL&amp;quot;:[np.mean(pairs[pair][&amp;#39;W_POLITICS&amp;#39;]) for pair in pairs],
-                    &amp;quot;A-POL&amp;quot;:[np.mean(pairs[pair][&amp;#39;A_POLITICS&amp;#39;]) for pair in pairs],
-#                    &amp;quot;RATINGS ALL&amp;quot;:[len(pairs[pair][&amp;#39;ALL&amp;#39;]) for pair in pairs],
-                    &amp;quot;S-ALL&amp;quot;:[np.mean(pairs[pair][&amp;#39;ALL&amp;#39;]) for pair in pairs],
-                    &amp;quot;D-AGE&amp;quot;:[np.mean(pairs[pair][&amp;#39;AGE&amp;#39;]) for pair in pairs],
-                    &amp;quot;D-EDU&amp;quot;:[np.mean(pairs[pair][&amp;#39;EDU&amp;#39;]) for pair in pairs],
-                    &amp;quot;D-ETH&amp;quot;:[np.mean(pairs[pair][&amp;#39;ETH&amp;#39;]) for pair in pairs],
-                    &amp;quot;D-GEN&amp;quot;:[np.mean(pairs[pair][&amp;#39;GEN&amp;#39;]) for pair in pairs],
-                    &amp;quot;D-USA&amp;quot;:[np.mean(pairs[pair][&amp;#39;US&amp;#39;]) for pair in pairs],
-#                    &amp;quot;B-SPA&amp;quot;:[pairs[pair][&amp;#39;COMMON&amp;#39;] for pair in pairs],
-                    &amp;quot;B-MEN&amp;quot;:[pairs[pair][&amp;#39;MEN&amp;#39;] for pair in pairs]})
-dfo.to_csv(f&amp;quot;{homedir}/private/master-analysis.csv&amp;quot;, index=False) 
-#descriptives
-dfc = dfo[[&amp;#39;S-ALL&amp;#39;,&amp;#39;B-MEN&amp;#39;,&amp;#39;S-ENT&amp;#39;, &amp;#39;W-ENT&amp;#39;, &amp;#39;S-TEC&amp;#39;, &amp;#39;W-TEC&amp;#39;,&amp;#39;S-POL&amp;#39;,&amp;#39;W-POL&amp;#39;]].copy()
-dfd = dfo[[&amp;#39;A-ENT&amp;#39;,&amp;#39;A-TEC&amp;#39;,&amp;#39;A-POL&amp;#39;,&amp;#39;D-AGE&amp;#39;,&amp;#39;D-EDU&amp;#39;,&amp;#39;D-ETH&amp;#39;,&amp;#39;D-GEN&amp;#39;,&amp;#39;D-USA&amp;#39;]].copy()
-print(dfc.describe())&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##              S-ALL        B-MEN  ...        S-POL        W-POL
-## count  1000.000000  1000.000000  ...  1000.000000  1000.000000
-## mean      0.500402     0.503280  ...     0.510208     0.359470
-## std       0.111213     0.246257  ...     0.122394     0.092682
-## min       0.189427     0.020000  ...     0.171053     0.105263
-## 25%       0.422414     0.280000  ...     0.422941     0.292720
-## 50%       0.500000     0.520000  ...     0.500000     0.359375
-## 75%       0.573183     0.740000  ...     0.594301     0.425449
-## max       0.806167     0.980000  ...     0.843750     0.636364
-## 
-## [8 rows x 8 columns]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(dfd.describe())&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##              A-ENT        A-TEC  ...        D-GEN        D-USA
-## count  1000.000000  1000.000000  ...  1000.000000  1000.000000
-## mean      0.567766     0.557154  ...     0.688954     0.988339
-## std       0.086913     0.088467  ...     0.032172     0.007314
-## min       0.324675     0.253731  ...     0.588832     0.954955
-## 25%       0.512821     0.500000  ...     0.668321     0.983640
-## 50%       0.569231     0.552239  ...     0.689655     0.989583
-## 75%       0.625000     0.615385  ...     0.710866     0.994798
-## max       0.852941     0.805556  ...     0.794872     1.000000
-## 
-## [8 rows x 8 columns]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(dfc.corr())&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##           S-ALL     B-MEN     S-ENT  ...     W-TEC     S-POL     W-POL
-## S-ALL  1.000000  0.702187  0.830371  ...  0.863528  0.842840  0.811441
-## B-MEN  0.702187  1.000000  0.577344  ...  0.570896  0.612975  0.602818
-## S-ENT  0.830371  0.577344  1.000000  ...  0.577128  0.501787  0.492089
-## W-ENT  0.812821  0.555053  0.978136  ...  0.569107  0.489126  0.477457
-## S-TEC  0.883864  0.606761  0.584392  ...  0.976091  0.685619  0.654673
-## W-TEC  0.863528  0.570896  0.577128  ...  1.000000  0.663676  0.628470
-## S-POL  0.842840  0.612975  0.501787  ...  0.663676  1.000000  0.958225
-## W-POL  0.811441  0.602818  0.492089  ...  0.628470  0.958225  1.000000
-## 
-## [8 rows x 8 columns]&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;a-cool-graph&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;A cool graph&lt;/h2&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import matplotlib.pyplot as plt
-#plt.style.use(&amp;#39;grayscale&amp;#39;)
-colors=[&amp;quot;C0&amp;quot;,&amp;quot;C1&amp;quot;,&amp;quot;C2&amp;quot;]
-for context in taskdata.keys():
-#    color = colors.pop()
-#    print(color)
-#    
-    # get x and y vectors
-    x = dfo[f&amp;quot;S-{context[0:3]}&amp;quot;]
-    y = dfo[f&amp;quot;A-{context[0:3]}&amp;quot;]
-    
-    
-    # calculate polynomial
-    z = np.polyfit(x, y, 3)
-    f = np.poly1d(z)
-    print(f)
-    
-    # calculate new x&amp;#39;s and y&amp;#39;s
-    x_new = np.linspace(0, 1, 50)
-    y_new = f(x_new)
-    
-    plt.ylabel(&amp;quot;AGREEMENT&amp;quot;)
-    plt.xlabel(&amp;quot;SCORE&amp;quot;)
-#    plt.legend()
-    plt.plot(x,y,&amp;quot;x&amp;quot;, label=&amp;#39;&amp;#39;)
-    plt.plot(x_new, y_new, label=context)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##           3       2
-## -0.03582 x + 1.8 x - 1.753 x + 0.9641
-##            3         2
-## -0.002704 x + 1.722 x - 1.705 x + 0.9509
-##         3          2
-## 0.4936 x + 0.8905 x - 1.27 x + 0.888&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;plt.legend()
-plt.show()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-03-18-a-new-database-for-context-sensitive-semantic-relatedness_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Craven Speed Clusters</title>
-      <link>/post/craven-speed-clusters/</link>
-      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/craven-speed-clusters/</guid>
-      <description>
-
-
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
-use_python(&amp;quot;/Applications/anaconda/bin/python&amp;quot;, required = TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(&amp;quot;Hello World&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Hello World&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import pandas as pd
-dfi = pd.read_csv(&amp;#39;/Users/jwatts/Dropbox/website/private/ECommerce.csv&amp;#39;)
-print(dfi.describe)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## &amp;lt;bound method NDFrame.describe of          cid  orders  avg_order_size  ...  last_order  recency  longevity
-## 0        142      85      602.441294  ...     8/20/18        2        336
-## 1        158       5      130.362000  ...     6/21/18       62        105
-## 2        297       2      206.105000  ...     8/21/18        1        286
-## 3        352       4       98.860000  ...     5/10/18      104        205
-## 4        417       2       37.500000  ...     4/23/18      121        179
-## 5        418       2      101.285000  ...      6/4/18       79        237
-## 6        586       1      244.850000  ...    11/22/17      273          0
-## 7        588       1       93.000000  ...      6/5/18       78          0
-## 8        750       1      109.000000  ...      4/6/18      138          0
-## 9        855       1       32.460000  ...     11/2/17      293          0
-## 10       876       4     1302.292500  ...      8/9/18       13        297
-## 11       910       4      403.837500  ...     7/13/18       40        240
-## 12      1095       1       20.000000  ...      2/9/18      194          0
-## 13      1128       1       88.000000  ...     9/29/17      327          0
-## 14      1174       1       25.000000  ...     6/22/18       61          0
-## 15      1250       1       25.000000  ...    10/17/17      309          0
-## 16      1278       1       68.080000  ...     11/3/17      292          0
-## 17      1392       2       50.745000  ...    10/10/17      316         16
-## 18      1441      23      881.298261  ...     8/14/18        8        336
-## 19      1446       3       79.650000  ...     6/15/18       68        128
-## 20      1515      15      100.870000  ...     8/20/18        2        312
-## 21      1570       6       35.228333  ...     7/18/18       35        147
-## 22      1728       1        0.000000  ...     1/24/18      210          0
-## 23      1763       2       53.120000  ...     6/11/18       72        189
-## 24      1770       1        0.000000  ...     9/25/17      331          0
-## 25      1864      18      360.291667  ...      8/6/18       16        322
-## 26      1986       1      103.000000  ...     7/22/18       31          0
-## 27      2062       1       30.000000  ...    11/27/17      268          0
-## 28      2116       2       55.000000  ...     2/14/18      189         18
-## 29      2148       3       57.453333  ...     6/22/18       61        251
-## ...      ...     ...             ...  ...         ...      ...        ...
-## 15870  80826       1       25.000000  ...     8/20/18        2          0
-## 15871  80828       1       25.000000  ...     8/21/18        1          0
-## 15872  80829       1       25.000000  ...     8/21/18        1          0
-## 15873  80831       1       25.000000  ...     8/21/18        1          0
-## 15874  80832       1       33.280000  ...     8/21/18        1          0
-## 15875  80833       1       93.000000  ...     8/21/18        1          0
-## 15876  80834       1       93.000000  ...     8/21/18        1          0
-## 15877  80835       1       25.000000  ...     8/21/18        1          0
-## 15878  80837       1       25.000000  ...     8/21/18        1          0
-## 15879  80838       1       93.000000  ...     8/21/18        1          0
-## 15880  80839       1       84.600000  ...     8/21/18        1          0
-## 15881  80840       1       67.000000  ...     8/21/18        1          0
-## 15882  80841       1       33.280000  ...     8/21/18        1          0
-## 15883  80843       1       25.000000  ...     8/21/18        1          0
-## 15884  80844       1       25.000000  ...     8/21/18        1          0
-## 15885  80845       1        0.000000  ...     8/21/18        1          0
-## 15886  80846       1       25.000000  ...     8/21/18        1          0
-## 15887  80847       1      103.670000  ...     8/21/18        1          0
-## 15888  80848       1       93.000000  ...     8/21/18        1          0
-## 15889  80849       1       43.280000  ...     8/21/18        1          0
-## 15890  80850       1       37.970000  ...     8/21/18        1          0
-## 15891  80851       1       25.000000  ...     8/21/18        1          0
-## 15892  80852       1      186.000000  ...     8/21/18        1          0
-## 15893  80853       1       93.000000  ...     8/21/18        1          0
-## 15894  80854       1       25.000000  ...     8/21/18        1          0
-## 15895  80855       1        0.000000  ...     8/21/18        1          0
-## 15896  80856       1       93.000000  ...     8/21/18        1          0
-## 15897  80857       1       25.000000  ...     8/21/18        1          0
-## 15898  80858       1      119.000000  ...     8/21/18        1          0
-## 15899  80859       1        0.000000  ...     8/21/18        1          0
-## 
-## [15900 rows x 17 columns]&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# import statements
-from sklearn.datasets import make_blobs
-import numpy as np
-import matplotlib.pyplot as plt
-# create blobs
-data = make_blobs(n_samples=200, n_features=2, centers=4, cluster_std=1.6, random_state=50)
-# create np array for data points
-points = data[0]
-# create scatter plot
-plt.scatter(data[0][:,0], data[0][:,1], c=data[1], cmap=&amp;#39;viridis&amp;#39;)
-plt.xlim(-15,15)
-plt.ylim(-15,15)
-plt.show()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-02-20-craven-speed-clusters_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Example Page</title>
       <link>/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 -0700</pubDate>
@@ -450,6 +161,189 @@ plt.show()&lt;/code&gt;&lt;/pre&gt;
       
       <guid>/publication/supple-networks/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>/slides/example-slides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/slides/example-slides/</guid>
+      <description>
+
+&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Code block:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+
+&lt;p&gt;Block math:&lt;/p&gt;
+
+&lt;p&gt;$$
+f\left( x \right) = \;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
+  One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+  &lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+  Three
+&lt;/span&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/boards.jpg&#34;
+  &gt;
+
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/boards.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

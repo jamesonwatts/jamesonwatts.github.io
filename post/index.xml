@@ -12,23 +12,5 @@
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>A New Database for Context-Sensitive Semantic Relatedness</title>
-      <link>/post/a-new-database-for-context-sensitive-semantic-relatedness/</link>
-      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/a-new-database-for-context-sensitive-semantic-relatedness/</guid>
-      <description>library(reticulate) use_python(&amp;quot;/Applications/anaconda/bin/python&amp;quot;, required = TRUE) OMG Python in RStudio! for i in range(10): if(i&amp;lt;5): print(&amp;quot;Hello Little World &amp;quot;+str(i)) else: print(&amp;quot;Hello Big World &amp;quot;+str(i)) ## Hello Little World 0 ## Hello Little World 1 ## Hello Little World 2 ## Hello Little World 3 ## Hello Little World 4 ## Hello Big World 5 ## Hello Big World 6 ## Hello Big World 7 ## Hello Big World 8 ## Hello Big World 9 Okay, moving on.</description>
-    </item>
-    
-    <item>
-      <title>Craven Speed Clusters</title>
-      <link>/post/craven-speed-clusters/</link>
-      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/craven-speed-clusters/</guid>
-      <description>library(reticulate) use_python(&amp;quot;/Applications/anaconda/bin/python&amp;quot;, required = TRUE) print(&amp;quot;Hello World&amp;quot;) ## Hello World import pandas as pd dfi = pd.read_csv(&amp;#39;/Users/jwatts/Dropbox/website/private/ECommerce.csv&amp;#39;) print(dfi.describe) ## &amp;lt;bound method NDFrame.describe of cid orders avg_order_size ... last_order recency longevity ## 0 142 85 602.441294 ... 8/20/18 2 336 ## 1 158 5 130.362000 ... 6/21/18 62 105 ## 2 297 2 206.105000 ... 8/21/18 1 286 ## 3 352 4 98.860000 ... 5/10/18 104 205 ## 4 417 2 37.</description>
-    </item>
-    
   </channel>
 </rss>
